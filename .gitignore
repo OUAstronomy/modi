@@ -1,0 +1,7 @@
+# Compiled files
+__pycache__
+*.pyc
+
+# private files
+*.key* 
+*.private*

@@ -1,0 +1,12 @@
+{
+  "name": "Modi",
+  "version": "0.1.0",
+  "description": "Modi application built with Electron",
+  "author": {
+    "name": "Nickalas Reynolds",
+    "email": ""
+  },
+  "license": "MIT",
+  "main": "javascripts/main/index.js",
+  "dependencies": {}
+}
