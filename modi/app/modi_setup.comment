@@ -1,0 +1,38 @@
+{ 
+  "images":{ // images are for setting backgrounds for various screens
+    "start":, // Antenna -> MODI
+    "end":,   // 
+    "loading":, 
+    "background":,
+    "blank":,
+    "default":,
+    "example":"./assets/images/example.png"
+  },
+  "icons":{ // icons for various small references
+    "modi_mini":"./assets/icons/modi_mini.png",
+    "modi_full":"./assets/icons/modi_full.png", // modi word
+    "logo_mini":"./assets/icons/logo_mini.png",
+    "logo_full":"./assets/icons/logo_full.png", // antenna
+  },
+  "buttons":{ // These buttons will have images above
+    "stow":"./assets/buttons/stow.png",
+    "pointing":"./assets/buttons/point.png",
+    "calibrate":"./assets/buttons/cal.png",
+    "record":"./assets/buttons/record.png",
+    "catalogue":"./assets/buttons/catalogue.png",
+    "offset":"./assets/buttons/offset.png",
+    "azel":"./assets/buttons/azel.png",
+    "cmd":"./assets/buttons/cmds.png",
+    "settings":"./assets/buttons/settings.png",
+    "help": "./assets/buttons/help.png"
+  },
+  "fonts":{
+    "regular":"./fonts/",
+  },
+  "settings":{
+    "height":800,
+    "width":1420,
+    "minWidth":710,
+    "minHeight":400,
+  }
+}

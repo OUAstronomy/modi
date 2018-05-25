@@ -1,12 +1,13 @@
 {
-  "name": "Modi",
+  "name": "Modi", 
   "version": "0.1.0",
-  "description": "Modi application built with Electron",
+  "description": "<> with <3 by Nick",
+  "license":"MIT",
+  "repository":"github.com/OUsrt/modi",
   "author": {
     "name": "Nickalas Reynolds",
-    "email": ""
+    "email": "nickalaskreynolds@gmail.com"
   },
-  "license": "MIT",
   "main": "javascripts/main/index.js",
   "dependencies": {}
 }
