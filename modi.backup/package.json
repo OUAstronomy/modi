@@ -1,0 +1,27 @@
+{
+  "name": "Modi",
+  "version": "0.1.0",
+  "description": "(3) Meter Observatory Desktop Interface for controlling the OU SRT",
+  "license":"MIT",
+  "repository":"github.com/OUsrt/modi",  
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "devDependencies": {
+    "bozon": "0.8.3",
+    "electron-builder": "20.11.1",
+    "electron": "2.0.0",
+    "gulp": "^3.9.1",
+    "mocha": "^5.1.1",
+    "spectron": "^3.8.0",
+    "webpack-stream": "^4.0.3"
+  },
+  "build": {
+    "appId": "com.electron.modi",
+    "win": {},
+    "mac": {
+      "category": "astronomy"
+    },
+    "linux": {}
+  }
+}

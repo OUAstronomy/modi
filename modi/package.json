@@ -1,25 +1,61 @@
 {
-  "name": "Modi",
+  "name": "MODI",
+  "productName": "(3) Meter Observatory Desktop Interface",
   "version": "0.1.0",
-  "description": "(3) Meter Observatory Desktop Interface for controlling the OU SRT",
-  "repository": "",
+  "description": "Interface for controlling the 3m Sooner Radio Telescope",
+  "private": true,
+  "main": "main.js",
   "scripts": {
-    "postinstall": "electron-builder install-app-deps"
+    "start": "electron .",
+    "dev": "electron . --debug",
+    "test": "mocha && standard",
+    "package": "npm-run-all package:*",
+    "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=product --icon=assets/app-icon/mac/app.icns --osx-sign.identity='Developer ID Application: GitHub' --extend-info=assets/mac/info.plist",
+    "package:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=product --icon=assets/app-icon/win/app.ico",
+    "package:linux": "electron-packager . --overwrite --platform=linux --arch=x64 --out=product",
+    "package:sign-exe": "signcode './product/MODI-win32-ia32/MODI.exe' --cert ~/modi.p12 --prompt --name 'MODI' --url 'http://github.com/OUsrt/modi.git'",
+    "package:installer": "node ./script/installer.js",
+    "package:sign-installer": "signcode './product/windows-installer/MODI.exe' --cert ~/modi.p12 --prompt --name 'MODI' --url 'http://github.com/OUsrt/modi.git'",
+    "package:mas": "./script/mas.sh",
+    "windows-store": "node ./script/windows-store.js",
+    "release": "node ./script/release.js",
+    "prepack": "check-for-leaks",
+    "prepush": "check-for-leaks"
   },
+  "repository": "https://github.com/OUsrt/modi.git",
+  "keywords": [
+    "Sooner",
+    "SRT",
+    "astronomy"
+  ],
+  "author": "Nickalas Reynolds",
+  "license": "MIT",
   "devDependencies": {
-    "bozon": "0.8.3",
-    "electron-builder": "20.11.1",
-    "electron": "2.0.0",
-    "gulp": "^3.9.1",
-    "mocha": "^5.1.1",
-    "spectron": "^3.8.0",
-    "webpack-stream": "^4.0.3"
+    "chai": "^3.4.1",
+    "chai-as-promised": "^6.0.0",
+    "check-for-leaks": "^1.2.0",
+    "devtron": "^1.3.0",
+    "electron": "^2.0.0",
+    "electron-packager": "^12.0.0",
+    "electron-winstaller": "^2.2.0",
+    "husky": "^0.14.3",
+    "mocha": "^3.1.0",
+    "npm-run-all": "^4.0.2",
+    "request": "^2.70.0",
+    "rimraf": "^2.5.2",
+    "signcode": "^0.5.0",
+    "spectron": "~3.6.0",
+    "standard": "^8.2.0"
   },
-  "build": {
-    "appId": "com.electron.modi",
-    "win": {},
-    "mac": {
-      "category": "your.app.category.type"
+  "dependencies": {
+    "electron-settings": "^3.0.7",
+    "electron-shortcut-normalizer": "^1.0.0",
+    "glob": "^7.1.0",
+    "highlight.js": "^9.3.0"
+  },
+  "standard": {
+    "env": {
+      "mocha": true
     }
   }
 }
