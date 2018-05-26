@@ -67,7 +67,7 @@ function zipAsset (asset) {
 }
 
 function zipAssets () {
-  const outPath = path.join(__dirname, '..', 'out')
+  const outPath = path.join(__dirname, '..', 'product')
 
   const zipAssets = [{
     name: 'modi-mac.zip',

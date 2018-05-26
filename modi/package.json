@@ -3,6 +3,14 @@
   "productName": "(3) Meter Observatory Desktop Interface",
   "version": "0.1.0",
   "description": "Interface for controlling the 3m Sooner Radio Telescope",
+  "repository": "https://github.com/OUsrt/modi.git",
+  "keywords": [
+    "Sooner",
+    "SRT",
+    "astronomy"
+  ],
+  "author": "Nickalas Reynolds",
+  "license": "MIT",
   "private": true,
   "main": "main.js",
   "scripts": {
@@ -22,14 +30,6 @@
     "prepack": "check-for-leaks",
     "prepush": "check-for-leaks"
   },
-  "repository": "https://github.com/OUsrt/modi.git",
-  "keywords": [
-    "Sooner",
-    "SRT",
-    "astronomy"
-  ],
-  "author": "Nickalas Reynolds",
-  "license": "MIT",
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^6.0.0",

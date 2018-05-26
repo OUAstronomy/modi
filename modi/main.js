@@ -3,9 +3,13 @@ const glob = require('glob')
 const {app, BrowserWindow} = require('electron')
 const autoUpdater = require('./auto-updater')
 
+var json = require('./package.json');
+var modiJson = require('./modisetup.json');
+
+
 const debug = /--debug/.test(process.argv[2])
 
-if (process.mas) app.setName('Electron APIs')
+if (process.mas) app.setName(json.name)
 
 let mainWindow = null
 
@@ -13,13 +17,14 @@ function initialize () {
   const shouldQuit = makeSingleInstance()
   if (shouldQuit) return app.quit()
 
-  loadDemos()
+  loadWindows()
 
   function createWindow () {
     const windowOptions = {
-      width: 1080,
-      minWidth: 680,
-      height: 840,
+      width: modiJson.settings.width,
+      minWidth: modiJson.settings.minWidth,
+      height: modiJson.settings.height,
+      minHeight: modiJson.settings.minHeight,
       title: app.getName()
     }
 
@@ -29,6 +34,14 @@ function initialize () {
 
     mainWindow = new BrowserWindow(windowOptions)
     mainWindow.loadURL(path.join('file://', __dirname, '/index.html'))
+    // should send json and modiJson through
+    // added here
+    // window.webContents.on('did-finish-load', function(){
+    //   window.webContents.send('loaded', json,process.versions,modiJson);
+    // });
+    // added in renderer.js
+    // require('electron').ipcRenderer.on('loaded' , function(event, json, processVersions, modiData) {
+
 
     // Launch fullscreen with DevTools open, usage: npm run debug
     if (debug) {
@@ -79,7 +92,7 @@ function makeSingleInstance () {
 }
 
 // Require each JS file in the main-process dir
-function loadDemos () {
+function loadWindows () {
   const files = glob.sync(path.join(__dirname, 'main-process/**/*.js'))
   files.forEach((file) => { require(file) })
   autoUpdater.updateMenu()

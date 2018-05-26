@@ -14,7 +14,7 @@ deleteOutputFolder()
 
 function getInstallerConfig () {
   const rootPath = path.join(__dirname, '..')
-  const outPath = path.join(rootPath, 'out')
+  const outPath = path.join(rootPath, 'product')
 
   return Promise.resolve({
     appDirectory: path.join(outPath, 'MODI-win32-ia32'),
@@ -31,7 +31,7 @@ function getInstallerConfig () {
 
 function deleteOutputFolder () {
   return new Promise((resolve, reject) => {
-    rimraf(path.join(__dirname, '..', 'out', 'windows-installer'), (error) => {
+    rimraf(path.join(__dirname, '..', 'product', 'windows-installer'), (error) => {
       error ? reject(error) : resolve()
     })
   })

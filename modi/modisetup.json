@@ -1,0 +1,39 @@
+{ 
+  "settings":{
+    "height":800,
+    "width":1420,
+    "minWidth":710,
+    "minHeight":400
+  },
+  "images":{ 
+    "start":"",
+    "end":"",
+    "loading":"",
+    "background":"",
+    "blank":"",
+    "default":"",
+    "example":"./assets/images/example.png"
+  },
+  "icons":{
+    "modi_mini":"./assets/icons/modi_mini.png",
+    "modi_full":"./assets/icons/modi_full.png",
+    "logo_mini":"./assets/icons/logo_mini.png",
+    "logo_full":"./assets/icons/logo_full.png"
+  },
+  "buttons":{ 
+    "stow":"./assets/buttons/stow.png",
+    "pointing":"./assets/buttons/point.png",
+    "calibrate":"./assets/buttons/cal.png",
+    "record":"./assets/buttons/record.png",
+    "catalogue":"./assets/buttons/catalogue.png",
+    "offset":"./assets/buttons/offset.png",
+    "azel":"./assets/buttons/azel.png",
+    "cmd":"./assets/buttons/cmds.png",
+    "settings":"./assets/buttons/settings.png",
+    "help": "./assets/buttons/help.png"
+  },
+  "fonts":{
+    "regular":"./fonts/",
+    "header":""
+  }
+}
